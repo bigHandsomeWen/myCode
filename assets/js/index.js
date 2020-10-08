@@ -23,7 +23,7 @@ function getUserInfo() {
         method: 'GET',
         url: '/my/userinfo',
         success: function (res) {
-            console.log(res);
+            // console.log(res);
             if (res.status !== 0) {
                 return layer.msg('获取用户信息失败！');
             }
@@ -34,7 +34,7 @@ function getUserInfo() {
 
 // 渲染页面
 function render(data) {
-    var name = data.username || data.nickname;
+    var name = data.nickname || data.username;
     // 渲染文本
     $('#welcome').html(`欢迎&nbsp;&nbsp;${name}`);
     // 判断用户是否上传了图片
